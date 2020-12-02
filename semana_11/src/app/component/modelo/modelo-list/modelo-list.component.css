@@ -1,0 +1,17 @@
+.modelos{
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+    padding: 30px;
+}
+
+.button_new{
+    position: absolute;
+    right: 50px;
+}
+.btn_action{
+    margin: 5px;
+}
+table {
+    width: 100%;
+}
