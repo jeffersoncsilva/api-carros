@@ -1,0 +1,51 @@
+<mat-card class="example-card mat-elevation-z3">
+    <button mat-raised-button class="button_new" color="primary" routerLink="/carros/form">Novo Carro</button>
+    <mat-card-header>
+        <mat-card-title>Carros </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="carros" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID.</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="modelo">
+                <th mat-header-cell *matHeaderCellDef>Modelo Carro:</th>
+                <td mat-cell *matCellDef="let element">{{element.modelo.nomeModelo}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="fabriNome">
+                <th mat-header-cell *matHeaderCellDef>Nome Fabricante:</th>
+                <td mat-cell *matCellDef="let element">{{element.modelo.fabricante.fabriNome}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="ano">
+                <th mat-header-cell *matHeaderCellDef>Ano:</th>
+                <td mat-cell *matCellDef="let element">{{element.ano}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="cor">
+                <th mat-header-cell *matHeaderCellDef>Cor:</th>
+                <td mat-cell *matCellDef="let element">{{element.cor}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Ações</th>
+                <td mat-cell *matCellDef="let element">
+                    <a routerLink="/fabricantes/update/{{element.id}}">
+                        <button mat-raised-button color="primary" class="btn_action"><i class="material-icons">edit</i>
+                            Editar </button>
+                    </a>
+                    <a>
+                        <button mat-raised-button color="warn" (click)="apagarCarro(element)" class="btn_action">
+                            <i class="material-icons">delete</i>
+                            Excluir
+                        </button>
+                    </a>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card-content>
+</mat-card>

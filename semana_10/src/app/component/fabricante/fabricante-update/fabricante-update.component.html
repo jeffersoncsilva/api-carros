@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-title>Alterar Fabricante</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do Fabricante" [(ngModel)]="fabri.fabriNome" name="fabricanteNome">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="salvarFabricante()" class="btn_action">
+        Salvar
+    </button>
+
+    <button mat-raised-button color="warn" routerLink="/fabricantes" class="btn_action">
+        Cancelar
+    </button>
+
+</mat-card>

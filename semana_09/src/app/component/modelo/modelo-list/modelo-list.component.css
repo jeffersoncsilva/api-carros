@@ -1,0 +1,6 @@
+.modelos{
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+    padding: 30px;
+}

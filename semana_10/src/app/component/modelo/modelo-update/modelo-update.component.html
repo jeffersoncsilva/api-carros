@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Alterar Modelo</mat-card-title>
+    <form>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Nome do Modelo" [(ngModel)]="modelo.nomeModelo" name="nomeModelo">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Fabricante</mat-label>
+            <mat-select [(ngModel)]="modelo.fabricante" name="fabricante">
+                <mat-option *ngFor="let fab of fabricantes" [value]="fab">
+                    {{fab.fabriNome}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button color="primary" (click)="salvarModelo()" class="btn_action">Salvar</button>
+    <button mat-raised-button color="warn" routerLink="/modelos" class="btn_action">Cancelar</button>
+</mat-card>

@@ -1,0 +1,8 @@
+.btn_action{
+    margin: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}

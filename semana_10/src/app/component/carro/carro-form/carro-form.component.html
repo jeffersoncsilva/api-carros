@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Novo Carro</mat-card-title>
+    <form>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Cor carro: " [(ngModel)]="carro.cor" name="corCarro">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <input type="number" matInput placeholder="Ano carro: " [(ngModel)]="carro.ano" name="anoCarro">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Placa carro: " [(ngModel)]="carro.placa" name="placaCarro">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo Carro</mat-label>
+            <mat-select [(ngModel)]="carro.tipo" name="tipo">
+                <mat-option *ngFor="let mod of tipoCarro" [value]="mod">
+                    {{mod}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Modelos</mat-label>
+            <mat-select [(ngModel)]="carro.modelo" name="modelos">
+                <mat-option *ngFor="let mod of modelos" [value]="mod">
+                    {{mod.nomeModelo}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button color="primary" (click)="salvarCarro()" class="btn_action">Salvar</button>
+    <button mat-raised-button color="warn" routerLink="/modelos" class="btn_action">Cancelar</button>
+</mat-card>
