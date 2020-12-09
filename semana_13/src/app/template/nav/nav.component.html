@@ -1,0 +1,25 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="64" fixedBottomGap="64" class="sidenav">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">home</i>
+                Inicio</a>
+            <a mat-list-item routerLink="/carros">
+                Carros
+            </a>
+            <a mat-list-item routerLink="/fabricantes">
+                Fabricantes
+            </a>
+            <a mat-list-item routerLink="/modelos">
+                Modelos
+            </a>
+            <a mat-list-item routerLink="/users">
+                Usuários
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

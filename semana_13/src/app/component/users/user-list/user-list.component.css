@@ -1,0 +1,15 @@
+button_new{
+    position: absolute;
+    right: 50px;
+}
+table {
+    width: 100%;
+}
+.novo_usuario{
+    position: absolute;
+    left: 85%;
+    margin: 10px;
+}   
+.btn_action {
+    margin: 5px;
+}
